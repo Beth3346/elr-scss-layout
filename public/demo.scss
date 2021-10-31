@@ -1,0 +1,119 @@
+@import "src/main";
+
+.block {
+  padding: 16px;
+  margin: 16px;
+  background-color: paleturquoise;
+
+  &.reset-block {
+    @include elr-reset-element();
+  }
+}
+
+.clearfix {
+  @include elr-clearfix;
+}
+
+.box {
+  background-color: lightcoral;
+  height: 200px;
+  width: 200px;
+  margin: 16px;
+  padding: 16px;
+  color: #fff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-block {
+  @include elr-center-block;
+  padding: 16px;
+  background-color: paleturquoise;
+  width: 700px;
+}
+
+.center-flex {
+  @include elr-center-flex;
+}
+
+.box-holder {
+  background-color: paleturquoise;
+  padding: 16px;
+  margin: 16px;
+
+  &.height-700 {
+    height: 700px;
+    width: 700px;
+    position: relative;
+  }
+
+  &.height-300 {
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
+
+  &.overflow-scroll {
+    overflow: scroll;
+
+    .content {
+      width: 400px;
+      height: 400px;
+      background-color: darkorchid;
+      color: #fff;
+    }
+
+    &.no-scroll {
+      @include elr-disable-scrollbars;
+    }
+  }
+
+  .content-top-center {
+    @include elr-position(
+      $config: (
+        x: "center",
+        y: "top",
+      )
+    );
+  }
+  .content-bottom-center {
+    @include elr-position(
+      $config: (
+        x: "center",
+        y: "bottom",
+      )
+    );
+  }
+  .content-center-left {
+    position: relative;
+    @include elr-position(
+      $config: (
+        x: "left",
+        y: "center",
+      )
+    );
+  }
+  .content-center-right {
+    position: relative;
+    @include elr-position(
+      $config: (
+        x: "right",
+        y: "center",
+      )
+    );
+  }
+  .content-center {
+    position: relative;
+    @include elr-position;
+  }
+
+  .box.left {
+    float: left;
+  }
+}
+
+.screen-reader-only {
+  @include elr-screen-reader;
+}

@@ -14,4 +14,42 @@ npm install elr-scss-layout --save
 yarn add elr-scss-layout
 ```
 
+### Reset Element
+
+Removes margin, padding, and sets line-height to 1.
+
+```scss
+@include elr-reset-element;
+```
+
+### Reset Clearfix
+
+Included for projects that need to use floats. In most cases using flexbox instead of floats is recommended.
+
+```scss
+@include elr-clearfix;
+```
+
+### Screen Reader Content
+
+Hides content visually but makes it available for screen readers.
+
+```scss
+@include elr-screen-reader;
+```
+
+### Center Block
+
+```scss
+@include elr-center-block;
+```
+
+### Center Flex
+
+Vertically and horizontally center content within a block.
+
+```scss
+@include elr-center-flex;
+```
+
 SEE LICENSE IN LICENSE.md
