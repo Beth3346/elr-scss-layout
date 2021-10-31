@@ -1,7 +1,7 @@
 # elr-scss-layout
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm](https://img.shields.io/npm/dm/elr-scss-layout.svg?style=flat)]()
+[![npm](https://img.shields.io/npm/dm/elr-scss-layout.svg?style=flat)](https://www.npmjs.com/package/elr-scss-layout)
 
 some scss mixins for layout
 
