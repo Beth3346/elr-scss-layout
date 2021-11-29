@@ -1,5 +1,6 @@
 @import "src/main";
 @import "elr-scss-reset/src/main";
+@import "elr-scss-config/src/main";
 
 @include elr-reset;
 
@@ -8,36 +9,47 @@
 }
 
 .wrapper {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  max-width: $content-width;
+  margin: 0 auto ($base-fontsize * 2);
+  padding: ($base-fontsize * 1.5);
 }
 
 .main-heading {
-  font-size: 36px;
+  font-size: $base-fontsize * 2;
   font-weight: 700;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
 }
 
 .subheading {
-  font-size: 16px;
-  color: #666;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
+  font-size: $base-fontsize * 1.5;
+  color: $primary-color;
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
   width: 100%;
+}
+
+h3 {
+  margin-bottom: $base-fontsize;
 }
 
 .demo-content {
   position: relative;
-  padding: 20px 0;
+  padding: ($base-fontsize * 1.5) 0;
 }
 
+@include elr-containers(
+  $config: (
+    max-width: 1024px,
+  )
+);
+
 .block {
-  padding: 16px;
-  margin: 16px;
+  padding: $base-fontsize;
+  margin: $base-fontsize;
   background-color: paleturquoise;
 
   &.reset-block {
@@ -53,8 +65,8 @@
   background-color: lightcoral;
   height: 200px;
   width: 200px;
-  margin: 16px;
-  padding: 16px;
+  margin: $base-fontsize;
+  padding: $base-fontsize;
   color: #fff;
   font-weight: 900;
   display: flex;
@@ -64,9 +76,10 @@
 
 .center-block {
   @include elr-center-block;
-  padding: 16px;
+  padding: $base-fontsize;
   background-color: paleturquoise;
   width: 700px;
+  max-width: 100%;
 }
 
 .center-flex {
@@ -75,10 +88,11 @@
 
 .box-holder {
   background-color: paleturquoise;
-  padding: 16px;
-  margin: 16px;
+  padding: $base-fontsize;
+  margin: $base-fontsize;
 
   &.height-700 {
+    max-width: 100%;
     height: 700px;
     width: 700px;
     position: relative;
@@ -151,4 +165,9 @@
 
 .screen-reader-only {
   @include elr-screen-reader;
+}
+
+p {
+  margin: $base-fontsize 0;
+  line-height: 1.5;
 }
