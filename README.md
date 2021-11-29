@@ -10,7 +10,12 @@ some scss mixins for layout
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-npm install elr-scss-layout --save
+npm install elr-scss-layout
+```
+
+or
+
+```sh
 yarn add elr-scss-layout
 ```
 
@@ -50,6 +55,16 @@ Vertically and horizontally center content within a block.
 
 ```scss
 @include elr-center-flex;
+```
+
+### Containers
+
+```scss
+@include elr-containers(
+  $config: (
+    max-width: 1024px,
+  )
+);
 ```
 
 SEE LICENSE IN LICENSE.md

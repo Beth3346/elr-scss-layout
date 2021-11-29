@@ -43,6 +43,9 @@
 }
 
 @mixin elr-center-flex() {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,6 +101,13 @@
 }
 
 @mixin elr-containers($config: ()) {
+  $config: extend(
+    (
+      max-width: $content-width,
+    ),
+    $config
+  );
+
   $max-width: map-get($config, max-width);
 
   .container-full {
