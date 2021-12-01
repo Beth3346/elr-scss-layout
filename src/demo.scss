@@ -1,8 +1,10 @@
-@import "src/main";
-@import "elr-scss-reset/src/main";
 @import "elr-scss-config/src/main";
+@import "elr-scss-reset/src/main";
+@import "elr-scss-base/src/main";
+@import "./src/main";
 
 @include elr-reset;
+@include elr-base;
 
 * {
   font-family: Roboto;
@@ -10,35 +12,36 @@
 
 .wrapper {
   max-width: $content-width;
-  margin: 0 auto ($base-fontsize * 2);
+  margin: auto;
   padding: ($base-fontsize * 1.5);
+}
+
+.main-heading,
+.subheading {
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
+  width: 100%;
 }
 
 .main-heading {
   font-size: $base-fontsize * 2;
   font-weight: 700;
-  border-bottom: $border;
-  padding-bottom: $base-fontsize * 0.5;
-  margin-bottom: $base-fontsize;
-  width: 100%;
 }
 
 .subheading {
   font-size: $base-fontsize * 1.5;
+  font-weight: 900;
   color: $primary-color;
-  border-bottom: $border;
-  padding-bottom: $base-fontsize * 0.5;
-  margin-bottom: $base-fontsize;
-  width: 100%;
-}
-
-h3 {
-  margin-bottom: $base-fontsize;
 }
 
 .demo-content {
   position: relative;
   padding: ($base-fontsize * 1.5) 0;
+}
+
+h3 {
+  margin-bottom: $base-fontsize;
 }
 
 @include elr-containers(
@@ -109,9 +112,13 @@ h3 {
 
     .content {
       width: 400px;
-      height: 400px;
+      min-height: 400px;
       background-color: darkorchid;
-      color: #fff;
+      padding: 32px;
+
+      p {
+        color: #fff;
+      }
     }
 
     &.no-scroll {
